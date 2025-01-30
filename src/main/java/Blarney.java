@@ -1,41 +1,40 @@
+import command.Command;
+import command.CommandParser;
+import exception.BlarneyException;
+import task.TaskList;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Blarney {
     public static void main(String[] args) {
-        String name = "Blarney";
-        Scanner scanner = new Scanner(System.in);
-        String[] tasks = new String[100];
-        int taskCount = 0;
+        // Create TaskList for holding tasks
+        TaskList tasks = new TaskList();
 
+        String name = "Blarney";
         System.out.println("________________________________");
         System.out.println("Hello! I'm " + name + "!");
         System.out.println("What can I do for you?");
         System.out.println("________________________________");
 
-        while (true) {
-            String input = scanner.nextLine();
+        // Runs as long as user hasn't issued 'bye' command
+        boolean isRunning = true;
+        while (isRunning) {
+            try {
+                // Reading user input through CommandParser
+                Command command = CommandParser.getCommand(new Scanner(System.in));
 
-            if (input.equalsIgnoreCase("bye")) {
-                System.out.println("________________________________");
-                System.out.println("Bye. Hope to see you again soon!");
-                System.out.println("________________________________");
-                break;
-            } else if (input.equalsIgnoreCase("list")) {
-                System.out.println("________________________________");
-                for (int i = 0; i < taskCount; i++) {
-                    System.out.println((i + 1) + ". " + tasks[i]);
+                // Execute the command
+                command.execute(tasks);
+
+                // End loop if 'bye' command was given
+                if (command instanceof command.ByeCommand) {
+                    isRunning = false;
                 }
-                System.out.println("________________________________");
-            } else {
-                if (taskCount < 100) {
-                    tasks[taskCount++] = input;
-                    System.out.println("________________________________");
-                    System.out.println("added: " + input);
-                    System.out.println("________________________________");
-                }
+            } catch (BlarneyException | IOException e) {
+                // Print exception message to the user
+                System.out.println(e.getMessage());
             }
         }
-
-        scanner.close();
     }
 }
