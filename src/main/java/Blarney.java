@@ -6,16 +6,18 @@ import task.TaskList;
 import java.io.IOException;
 import java.util.Scanner;
 
+import static params.Constants.SOLIDLINE;
+
 public class Blarney {
     public static void main(String[] args) {
         // Create TaskList for holding tasks
         TaskList tasks = new TaskList();
 
         String name = "Blarney";
-        System.out.println("________________________________");
+        System.out.print(SOLIDLINE);
         System.out.println("Hello! I'm " + name + "!");
         System.out.println("What can I do for you?");
-        System.out.println("________________________________");
+        System.out.print(SOLIDLINE);
 
         // Runs as long as user hasn't issued 'bye' command
         boolean isRunning = true;

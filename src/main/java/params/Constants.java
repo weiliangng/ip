@@ -1,5 +1,5 @@
 package params;
 
 public class Constants {
-    public static final String SOLIDLINE = "\n_______________________________________________________\n";
+    public static final String SOLIDLINE = "_______________________________________________________\n";
 }
