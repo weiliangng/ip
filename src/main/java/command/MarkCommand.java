@@ -32,9 +32,8 @@ public class MarkCommand extends Command {
             throw new BlarneyException("missing number index in the second word. ");
         }
         tasks.markTask(index,true);
-        System.out.println(SOLIDLINE + "I have marked this as " +
+        System.out.println(SOLIDLINE + "I have marked task " + (index+1) + " as " +
                 (tasks.get(index).getIsDone() ? "done: " : "not done yet: "));
-        System.out.println("[" + tasks.get(index).getStatusIcon() + "] " +
-                tasks.get(index).getDescription() + SOLIDLINE);
+        System.out.println(tasks.get(index));
     }
 }
