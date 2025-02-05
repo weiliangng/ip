@@ -1,7 +1,9 @@
-Hello from
- ____        _        
-|  _ \ _   _| | _____ 
-| | | | | | | |/ / _ \
-| |_| | |_| |   <  __/
-|____/ \__,_|_|\_\___|
-
+_______________________________________________________
+Hello! I'm Blarney!
+What can I do for you?
+_______________________________________________________
+Available Commands:
+todo <task-to-be-added>, mark <index>, unmark <index>, list, bye
+event <task-to-be-added> -from <begin> -to <end> eg event x -from x -to x
+deadline <task-to-be-added> -by <deadline> eg deadline x -by x
+_______________________________________________________
