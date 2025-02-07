@@ -27,6 +27,7 @@ public class EventCommand extends Command {
         }
     }
 
+    @Override
     public void execute(TaskList tasks) throws BlarneyException {
         Task newTask = new Event(description, begin, end);
         tasks.addTask(newTask);
