@@ -24,12 +24,12 @@ public class MarkCommand extends Command {
             // This is the user index starting from 1
             index--;
             if(index < 0 || index + 1 > tasks.size()) {
-                throw new BlarneyException("out of index!");
+                throw new BlarneyException("out of index! key in index, not task name.....");
             }
         } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
             throw new BlarneyException("there is no task to mark!" );
         } catch (NumberFormatException e) {
-            throw new BlarneyException("missing number index in the second word. ");
+            throw new BlarneyException("missing number index in the second word. key in index, not task name.....");
         }
         tasks.markTask(index,true);
         System.out.println(SOLIDLINE + "I have marked task " + (index+1) + " as " +
