@@ -23,7 +23,7 @@ public class EventCommand extends Command {
             this.end = parts[2].trim();
 
         } else {
-            throw new BlarneyException("Invalid input format");
+            throw new BlarneyException("Invalid input format, your arguments are invalid");
         }
     }
 

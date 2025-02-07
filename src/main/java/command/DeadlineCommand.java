@@ -21,7 +21,7 @@ public class DeadlineCommand extends Command {
             this.by = parts[1].trim();
 
         } else {
-            throw new BlarneyException("Invalid input format");
+            throw new BlarneyException("Invalid input format, your arguments are invalid");
         }
     }
 
