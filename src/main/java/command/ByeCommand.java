@@ -12,7 +12,7 @@ public class ByeCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks) throws BlarneyException {
+    public void runCommand(TaskList tasks) throws BlarneyException {
         System.out.println(SOLIDLINE + "\nBlarney blunders away\n" + SOLIDLINE);
         System.exit(0);
     }

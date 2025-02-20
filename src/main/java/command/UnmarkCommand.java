@@ -17,7 +17,7 @@ public class UnmarkCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks) throws BlarneyException, IOException {
+    public void runCommand(TaskList tasks) throws BlarneyException, IOException {
         int index;
         try {
             index = Integer.parseInt(args);
