@@ -44,7 +44,7 @@ public class Blarney {
                 // End loop if 'bye' command was given
                 if (command instanceof command.ByeCommand) {
                     isRunning = false;
-                } else if (success && command instanceof command.TodoCommand | command instanceof command.DeadlineCommand | command instanceof command.EventCommand | command instanceof command.MarkCommand | command instanceof command.UnmarkCommand) {
+                } else if (success && command instanceof command.DeleteCommand | command instanceof command.TodoCommand | command instanceof command.DeadlineCommand | command instanceof command.EventCommand | command instanceof command.MarkCommand | command instanceof command.UnmarkCommand) {
                     store.saveCommand(input);
                 }
             } catch (BlarneyException e) {
