@@ -21,6 +21,7 @@ public class CommandParser {
             case "bye" -> new ByeCommand();
             case "event" -> new EventCommand(args);
             case "deadline" -> new DeadlineCommand(args);
+            case "delete" -> new DeleteCommand(args);
             default -> throw new BlarneyUnknownException();
         };
     }

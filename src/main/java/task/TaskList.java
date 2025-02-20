@@ -14,4 +14,8 @@ public class TaskList extends ArrayList<Task> {  // Inherits from ArrayList<Task
     public void markTask(int index, boolean isDone) {
         this.get(index).setIsDone(isDone);  // Get task from 'this' list and update it
     }
+
+    public void deleteTask(int index) {
+        this.remove(index);
+    }
 }
