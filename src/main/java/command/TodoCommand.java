@@ -16,7 +16,7 @@ public class TodoCommand extends Command{
     }
 
     @Override
-    public void execute(TaskList tasks) throws BlarneyException {
+    public void runCommand(TaskList tasks) throws BlarneyException {
         if (taskDescription.isEmpty()) {
             throw new BlarneyException("Task description cannot be empty.");
         }

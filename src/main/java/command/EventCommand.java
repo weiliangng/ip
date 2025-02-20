@@ -28,7 +28,7 @@ public class EventCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks) throws BlarneyException {
+    public void runCommand(TaskList tasks) throws BlarneyException {
         Task newTask = new Event(description, begin, end);
         tasks.addTask(newTask);
         System.out.println(SOLIDLINE + "Added: " + newTask + "\n" + SOLIDLINE);

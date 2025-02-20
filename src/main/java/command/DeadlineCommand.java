@@ -26,7 +26,7 @@ public class DeadlineCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks) throws BlarneyException {
+    public void runCommand(TaskList tasks) throws BlarneyException {
         Task newTask = new Deadline(description, by);
         tasks.addTask(newTask);
         System.out.println(SOLIDLINE + "Added: " + newTask + "\n" + SOLIDLINE);
