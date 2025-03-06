@@ -2,9 +2,6 @@ package command;
 
 import exception.BlarneyException;
 import exception.BlarneyUnknownException;
-import java.util.Scanner;
-
-import static params.Constants.SOLIDLINE;
 
 public class CommandParser {
     public static Command parseCommand(String input) throws BlarneyException {
@@ -22,6 +19,7 @@ public class CommandParser {
             case "event" -> new EventCommand(args);
             case "deadline" -> new DeadlineCommand(args);
             case "delete" -> new DeleteCommand(args);
+            case "find" -> new FindCommand(args);
             default -> throw new BlarneyUnknownException();
         };
     }
