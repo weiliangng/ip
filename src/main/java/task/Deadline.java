@@ -1,3 +1,7 @@
+/**
+ * The {@code Deadline} class represents a task with a specific due date.
+ * It extends the {@code Task} class and includes an additional attribute for the deadline.
+ */
 package task;
 
 public class Deadline extends Task {

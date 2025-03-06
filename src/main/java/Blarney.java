@@ -1,3 +1,9 @@
+
+/**
+ * The {@code Blarney} class is the main entry point for the task management application.
+ * It initializes the task list, loads previous task history, and continuously processes user commands
+ * until the user issues the "bye" command to exit.
+ */
 import command.Command;
 import command.CommandParser;
 import exception.BlarneyException;
@@ -10,6 +16,13 @@ import static params.Constants.SOLIDLINE;
 import static params.Constants.FILEPATH;
 
 public class Blarney {
+
+    /**
+     * The main method that starts the application.
+     * It initializes the task list, loads saved data, and continuously listens for user commands.
+     *
+     * @param args Command-line arguments (not used in this application).
+     */
     public static void main(String[] args) {
         // Create TaskList for holding tasks
         TaskList tasks = new TaskList();

@@ -1,3 +1,8 @@
+/**
+ * The {@code MarkCommand} class handles marking a task as completed in the task list.
+ * It parses the user input to extract the task index and updates the task status accordingly.
+ */
+
 package command;
 
 import task.Task;
@@ -16,6 +21,14 @@ public class MarkCommand extends Command {
         this.args = args;
     }
 
+
+    /**
+     * Executes the command by marking the specified task as completed.
+     *
+     * @param tasks The {@code TaskList} containing the task to be marked.
+     * @throws BlarneyException If an error occurs, such as an invalid index or missing argument.
+     * @throws IOException If an input/output error occurs.
+     */
     @Override
     public void runCommand(TaskList tasks) throws BlarneyException, IOException {
         int index;

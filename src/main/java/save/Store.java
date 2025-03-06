@@ -1,3 +1,8 @@
+/**
+ * The {@code Store} class manages saving and loading task data to and from a file.
+ * It ensures that task history persists between program executions by writing and reading commands from a specified file.
+ */
+
 package save;
 
 import command.Command;
@@ -18,7 +23,12 @@ public class Store {
     protected File fileObj;
     protected TaskList taskData;
 
-
+    /**
+     * Constructs a {@code Store} object responsible for managing task persistence.
+     *
+     * @param filePath  The file path where task data will be stored.
+     * @param taskData  The {@code TaskList} containing the user's tasks.
+     */
     public Store(String filePath, TaskList taskData) {
         this.filePath = filePath;
         File fileObj = new File(filePath);
@@ -61,6 +71,11 @@ public class Store {
 
     }
 
+    /**
+     * Saves a command to the file, ensuring that user actions persist between sessions.
+     *
+     * @param command The command string to be written to the save file.
+     */
     public void saveCommand(String command) {
         try (FileWriter fileWriter = new FileWriter(fileObj, true)) { // 'true' enables append mode
             fileWriter.write(command + System.lineSeparator()); // Write command with a new line

@@ -1,3 +1,8 @@
+/**
+ * The {@code TaskList} class extends {@code ArrayList<Task>} and provides
+ * additional methods for managing tasks, such as adding, marking, and deleting tasks.
+ */
+
 package task;
 import java.util.ArrayList;
 

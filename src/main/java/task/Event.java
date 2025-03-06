@@ -1,3 +1,7 @@
+/**
+ * The {@code Event} class represents a task with a specific start and end date.
+ * It extends the {@code Task} class and includes additional attributes for event scheduling.
+ */
 package task;
 
 public class Event extends Task {
