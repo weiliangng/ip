@@ -1,3 +1,8 @@
+/**
+ * The {@code Task} class represents a generic task with a description
+ * and a completion status. It provides methods to retrieve and modify
+ * the task's state.
+ */
 package task;
 
 public class Task {

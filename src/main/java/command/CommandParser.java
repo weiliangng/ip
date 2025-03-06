@@ -1,3 +1,8 @@
+/**
+ * The {@code CommandParser} class is responsible for parsing user input into specific command objects.
+ * It takes a string input, extracts the command and arguments, and returns the appropriate command instance.
+ */
+
 package command;
 
 import exception.BlarneyException;
@@ -6,7 +11,18 @@ import java.util.Scanner;
 
 import static params.Constants.SOLIDLINE;
 
+
+
+
 public class CommandParser {
+    /**
+     * Parses a given input string and converts it into a corresponding {@code Command} object.
+     *
+     * @param input The user's input string containing the command and optional arguments.
+     * @return A {@code Command} object corresponding to the parsed input.
+     * @throws BlarneyException If the input does not match any known commands.
+     */
+
     public static Command parseCommand(String input) throws BlarneyException {
         String[] commands = input.split(" ", 2); // Split into command and arguments
 

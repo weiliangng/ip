@@ -1,3 +1,8 @@
+/**
+ * The {@code DeleteCommand} class handles the deletion of a task from the task list.
+ * It parses the user input to extract the task index and removes the corresponding task.
+ */
+
 package command;
 
 import exception.BlarneyException;
@@ -15,6 +20,13 @@ public class DeleteCommand extends Command {
         this.args = args;
     }
 
+    /**
+     * Executes the command by deleting the specified task from the task list.
+     *
+     * @param tasks The {@code TaskList} from which the task will be deleted.
+     * @throws BlarneyException If an error occurs, such as an invalid index or a missing argument.
+     * @throws IOException If an input/output error occurs.
+     */
     @Override
     public void runCommand(TaskList tasks) throws BlarneyException, IOException {
         int index;
