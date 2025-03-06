@@ -5,6 +5,7 @@
 
 package task;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TaskList extends ArrayList<Task> {  // Inherits from ArrayList<Task>
 
@@ -22,5 +23,15 @@ public class TaskList extends ArrayList<Task> {  // Inherits from ArrayList<Task
 
     public void deleteTask(int index) {
         this.remove(index);
+    }
+
+    public List<Task> findTask(String keyword) {
+        List<Task> matchingTasks = new ArrayList<>();
+        for (Task task : this) {
+            if (task.getDescription().contains(keyword)) {
+                matchingTasks.add(task);
+            }
+        }
+        return matchingTasks;
     }
 }

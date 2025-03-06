@@ -4,20 +4,34 @@
  */
 package task;
 
-public class Deadline extends Task {
-    protected String dueDate;
 
-    public Deadline(String description, String dueDate) {
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.Duration;
+import static params.Constants.FORMATTER;
+
+public class Deadline extends Task {
+    protected LocalDateTime dueDate;
+
+    public Deadline(String description, LocalDateTime dueDate) {
         super(description);
         this.dueDate = dueDate;
     }
 
     public String getDueDate() {
-        return dueDate;
+        return dueDate.format(FORMATTER);
+    }
+
+    public String getTimeUntilDeadline() {
+        LocalDateTime now = LocalDateTime.now();
+        Duration duration = Duration.between(now, dueDate);
+        long days = duration.toDays();
+        long hours = duration.toHours() % 24;
+        return days + " days and " + hours + " hours remaining";
     }
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (due by: " + dueDate + ")";
+        return "[D]" + super.toString() + " (due by: " + getDueDate() + "), " + getTimeUntilDeadline();
     }
 }

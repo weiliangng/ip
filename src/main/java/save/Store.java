@@ -51,23 +51,29 @@ public class Store {
 
         //assert file should be created by now
         //read the document and call
+        Scanner scanner = null;
+
         try {
-            Scanner scanner = new Scanner(fileObj);
-            while(scanner.hasNext()) {
-                String input = scanner.nextLine();//assumes file is nicely formatted
-                Command command = CommandParser.parseCommand(input);//makes use of all existing error checking
-                command.execute(taskData);
-            }
-            scanner.close();
-            System.out.println("history has been loaded");
-
+            scanner = new Scanner(fileObj);
         } catch (FileNotFoundException e) {
-            System.out.println("Failed to find savefile, progress will not be saved");
-
-        } catch (BlarneyException | IOException e) {
-            // Print exception message to the user
-            System.out.println(e.getMessage());
+            throw new BlarneyException("Failed to find savefile, progress will not be saved");
         }
+
+        while (scanner.hasNext()) {
+            String input = scanner.nextLine(); // Assumes file is nicely formatted
+            try {
+                Command command = CommandParser.parseCommand(input); // Makes use of all existing error checking
+                command.execute(taskData);
+            } catch (BlarneyException e) {
+                // Print exception message to the user but continue processing the next lines
+                System.out.println("Error processing line: " + input + ", " + e.getMessage() + " \nSkipping to the next line.");
+
+            }
+        }
+
+        scanner.close();
+        System.out.println("History has been loaded");
+
 
     }
 
@@ -80,7 +86,7 @@ public class Store {
         try (FileWriter fileWriter = new FileWriter(fileObj, true)) { // 'true' enables append mode
             fileWriter.write(command + System.lineSeparator()); // Write command with a new line
         } catch (IOException e) {
-            System.out.println("An error occurred while saving the command, command will not be saved");
+            throw new BlarneyException("An error occurred while saving the command, command will not be saved");
         }
     }
 }
