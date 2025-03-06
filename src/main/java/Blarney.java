@@ -31,7 +31,7 @@ public class Blarney {
             try {
                 // Reading user input through CommandParser
                 System.out.println("Available Commands:\n" + "todo <task-to-be-added>, mark <index>, unmark <index>, list, bye");
-                System.out.println("event <task-to-be-added> -from <begin> -to <end> eg event x -from x -to x");
+                System.out.println("event <task-to-be-added> -from <begin (in dd-MM-yyyy HH:mm)> -to <end (in dd-MM-yyyy HH:mm)> eg event x -from 01-01-2026 12:29 -to 01-01-2026 13:29");
                 System.out.println("deadline <task-to-be-added> -by <deadline in dd-MM-yyyy HH:mm> eg deadline x -by 01-01-2026 12:29");
                 System.out.print(SOLIDLINE);
 
