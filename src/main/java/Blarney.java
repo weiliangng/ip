@@ -62,7 +62,7 @@ public class Blarney {
                 }
             } catch (BlarneyException e) {
                 // Print exception message to the user
-                System.out.println("Something went wrong");
+                System.out.println(e.getMessage());
             }
         }
     }
