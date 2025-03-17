@@ -7,6 +7,7 @@ Welcome to **Blarney**, your friendly to-do list assistant! This app helps you m
 - Schedule events with start and end times.
 - Set deadlines for tasks.
 - List all current tasks and events.
+- Find tasks
 
 ## Available Commands
 
@@ -105,6 +106,20 @@ Example Output:
 ```
 1. [E][ ] Dinner (begins: 01-01-2026 12:29, ends: 01-01-2026 13:29), 1 hour(s) long
 2. [D][ ] Homework (due by: 01-01-2026 12:29), 300 days and 7 hours remaining
+```
+
+### Find a Task
+To search for tasks or events that contain a specific keyword:
+```
+find <keyword>
+```
+Example:
+```
+find homework
+```
+Output: 
+```
+1. [D][ ] homework (due by: 01-01-2026 12:29), 289 days and 14 hours remaining
 ```
 
 ### Exit the App

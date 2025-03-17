@@ -107,6 +107,20 @@ Example Output:
 2. [D][ ] Homework (due by: 01-01-2026 12:29), 300 days and 7 hours remaining
 ```
 
+### Find a Task
+To search for tasks or events that contain a specific keyword:
+```
+find <keyword>
+```
+Example:
+```
+find homework
+```
+Output:
+```
+1. [D][ ] homework (due by: 01-01-2026 12:29), 289 days and 14 hours remaining
+```
+
 ### Exit the App
 To exit the application:
 ```
